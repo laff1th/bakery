@@ -1,11 +1,16 @@
 .error {
+  margin: rem(64) 0;
   display: grid;
   grid-template-columns: repeat(12, rem(80));
   gap: rem(20);
 
   &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     align-self: center;
     grid-column: span 5;
+    max-width: rem(350);
   }
 
   &__sub-title {
@@ -23,6 +28,7 @@
   }
 
   &__text {
+    width: rem(280);
     margin-bottom: rem(24);
     font-size: $mainTextFontSize;
     line-height: $mainTextLineHeight;
@@ -37,6 +43,16 @@
     line-height: $menuLineHeight;
     background: $accentColor;
     border-radius: $borderRadius;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      box-shadow: $shadowAccent;
+    }
+
+    &:active {
+      box-shadow: $shadowButtonActive;
+    }
+
   }
 
   &__image {
