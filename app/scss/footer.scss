@@ -1,0 +1,172 @@
+.footer {
+  padding: rem(36) 0;
+  line-height: math.div(24, 16);
+  color: $lightColor;
+  background: $mainColor;
+
+  &__container {
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(12, rem(80));
+    column-gap: rem(20);
+    
+  }
+
+  &__info {
+    grid-column: 1 / span 4;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: rem(16);
+  }
+
+  &__logo {
+    &:hover path {
+      fill: $accentColor;
+    }
+
+    path {
+      transition: $transitionLink;
+      fill: $lightColor;
+    }
+  }
+
+  &__text {
+    span {
+      color: $accentColor;
+    }
+  }
+
+  &__socials {
+  }
+
+  &__socials-list {
+    display: flex;
+    gap: rem(28);
+  }
+
+  &__socials-item {
+  }
+
+  &__socials-link {
+    &:hover {
+      svg {
+        scale: 1.25;
+
+        path {
+          fill: $accentColor;
+        }
+      }
+    }
+    svg {
+      transition: $transitionLink;
+      
+      path {
+        transition: $transitionLink;
+      }
+    }
+  }
+
+  &__menu {
+    grid-column: span 4;
+
+    &:last-of-type {
+      grid-column: span 2;
+    }
+  }
+
+  &__button {
+    grid-column: 11 / span 2;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: rem(128);
+    height: rem(128);
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: math.div(28, 24);
+    color: $mainColor;
+    background: $accentColor;
+    border-radius: 50%;
+  }
+
+  &__bottom {
+    &::before {
+      content:"";
+      display: block;
+      width: 100%;
+      height: rem(2);
+      margin: rem(24) 0;
+      background: $accentColor;
+    }
+  }
+
+  &__bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__designer {
+    &:hover span {
+      color: $accentColor;
+    }
+
+    span {
+      font-weight: 800;
+      transition: $transitionLink;
+    }
+  }
+
+  &__copyright {
+  }
+
+  &__policy {
+    transition: $transitionLink;
+    &:hover{
+      color: $accentColor;
+    }
+  }
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  &__title {
+    font-weight: 600;
+    font-size: $menuFontSize;
+    line-height: $menuLineHeight;
+    color: $accentColor;
+  }
+
+  &__body {
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: rem(8);
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: block;
+    transition: $transitionLink;
+    
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  &__address {
+    font-style: inherit;
+  }
+}

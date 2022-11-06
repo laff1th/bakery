@@ -1,0 +1,58 @@
+.categories {
+  margin: rem(24) 0 rem(64);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, rem(80));
+    grid-template-rows: repeat(2, rem(280));
+    gap: rem(20);
+  }
+
+  &__category {
+  }
+}
+
+.category {
+  position: relative;
+  grid-column: span 6;
+  display: block;
+  padding: rem(16);
+  background: $lightColor;
+  border-radius: $borderRadius;
+  box-shadow: $shadowSmall;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    scale: 1.025;
+  }
+
+  &--big {
+    grid-row: span 2;
+  }
+
+  &__image {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: $borderRadiusInner;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    cursor: pointer;
+    position: absolute;
+    left: rem(32);
+    bottom: rem(32);
+    font-weight: 700;
+    font-size: rem(32);
+    line-height: math.div(40, 32);
+    color: $lightColor;
+    transition: $transitionLink;
+  }
+}

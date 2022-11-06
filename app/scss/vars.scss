@@ -1,0 +1,27 @@
+$oppositeColor: #38627B;
+$accentColor: #F4AB2B;
+$accentColorActive: #C38922;
+$secondColor: #F5EEC4;
+$dark75Color: #404040;
+$dark50Color: #808080;
+$lightColor: #ffffff;
+$shadowColor: rgba(0, 0, 0, 0.16);
+
+$shadow: 0px 4px 20px $shadowColor;
+$shadowSmall: 0px 3px 12px $shadowColor;
+$shadowButton: 0px 3px 12px $shadowColor, inset 0px 0px 0px $shadowColor;
+$shadowButtonActive: 0px 0px 0px $shadowColor, inset 0px 3px 12px $shadowColor;
+
+$borderRadius: 28px;
+$borderRadiusInner: 12px;
+
+$h1FontSize: rem(64);
+$h1LineHeight: math.div(78, 64);
+
+$menuFontSize: rem(20);
+$menuLineHeight: math.div(24, 20);
+
+$mainTextFontSize: rem(16);
+$mainTextLineHeight: math.div(24, 16);
+
+$transitionLink: all 0.15s ease 0s;

@@ -1,0 +1,158 @@
+.page {
+  min-height: 100vh;
+
+  &__container {
+  }
+
+  &__breadcrumbs {
+    margin: rem(24) 0 rem(48);
+    font-size: $menuFontSize;
+    line-height: $menuLineHeight;
+
+    a {
+      transition: $transitionLink;
+    }
+
+    a:hover {
+      color: $accentColor;
+    }
+
+    a:active {
+      color: $accentColorActive;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: $h1FontSize;
+    line-height: $h1LineHeight;
+  }
+
+  &__search {
+    position: relative;
+  }
+
+  &__input {
+    min-width: rem(280);
+    display: block;
+    padding: rem(16) rem(12) rem(16) rem(44);
+    font-size: rem(16);
+    line-height: math.div(20, 16);
+    outline: 2px solid #fff;
+    border-radius: $borderRadius;
+    box-shadow: $shadowSmall;
+    transition: all 0.3s ease 0s;
+
+    &::placeholder {
+      color: $dark50Color;
+    }
+
+    &:focus {
+      outline: 2px solid $dark50Color;
+    }
+  }
+
+  &__dropdown-inner {
+    position: relative;
+  }
+
+  &__search-button {
+    position: absolute;
+    top: 50%;
+    left: rem(16);
+    transform: translateY(-50%);
+  }
+
+  &__dropdown-button {
+    padding: rem(12) rem(16);
+  }
+
+  &__dropdown {
+  }
+}
+
+.dropdown-button {
+	cursor: pointer;
+	user-select: none;
+	display: flex;
+	transition: all 0.3s ease 0s;
+	border-radius: $borderRadius;
+	position: relative;
+	display: flex;
+	gap: rem(12);
+	font-weight: 600;
+	font-size: $menuFontSize;
+	line-height: $menuLineHeight;
+	background: $lightColor;
+
+	&:hover {
+		padding: rem(12) rem(16);
+		color: $accentColor;
+		box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
+
+		path {
+			fill: $accentColor;
+		}
+	}
+
+  &:active {
+    transition: all 0.1s ease 0s;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16), inset 0px 3px 12px rgba(0, 0, 0, 0.16);
+  }
+
+	&--active {
+		padding: rem(12) rem(16);
+		box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
+
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+
+	svg {
+		transition: $transitionLink;
+	}
+}
+
+.dropdown {
+	position: absolute;
+	width: 100%;
+	top: 56px;
+	left: 0;
+	padding: rem(12) rem(16);
+	background: $lightColor;
+	border-radius: $borderRadius;
+	box-shadow: $shadowSmall;
+	transition: all 0.225s ease 0s;
+	scale: 0;
+
+		&--active {
+			scale: 1;
+		}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: rem(2);
+		font-size: rem(16);
+		line-height: math.div(24, 16);
+	}
+
+	&__item {
+	}
+
+	&__link {
+    font-weight: 600;
+		transition: $transitionLink;
+
+		&:hover{
+			color: $accentColor;
+		}
+	}
+}

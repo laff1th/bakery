@@ -1,0 +1,142 @@
+.catalog {
+  margin: rem(24) 0 rem(64);
+
+  &__categories {
+    display: flex;
+    gap: rem(12);
+    margin: rem(24) 0 rem(32);
+  }
+
+  &__category {
+    padding: rem(12) rem(16);
+    font-weight: 600;
+    font-size: $menuFontSize;
+    line-height: $menuLineHeight;
+    color: $dark75Color;
+    background: $lightColor;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
+    border-radius: $borderRadius;
+    transition: $transitionLink, padding 0.3s;
+
+    &--active {
+      padding: rem(12) rem(24);
+      color: $accentColor;
+    }
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &:active {
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16), inset 0px 3px 12px rgba(0, 0, 0, 0.16);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(12, rem(80));
+    gap: rem(20);
+  }
+
+  &__item {
+    grid-column: span 4;
+  }
+}
+
+.catalog-item {
+  padding: rem(16);
+  background: $lightColor;
+  box-shadow: $shadow;
+  border-radius: $borderRadius;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    scale: 1.025;
+  }
+
+  &__body {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(8);
+    font-size: $menuFontSize;
+    line-height: $menuLineHeight;
+  }
+
+  &__image {
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
+    flex: 1 1 auto;
+    border-radius: $borderRadiusInner;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: rem(24);
+    line-height: math.div(30, 24);
+    transition: $transitionLink;
+
+    &:hover {
+      color: $accentColor;
+    }
+  }
+
+  &__category {
+    color: $dark75Color;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &:active {
+      color: $accentColorActive;
+    }
+  }
+
+  &__price {
+    font-weight: 600;
+    
+    &::after {
+      content: url("../img/icons/ruble.svg");
+      margin-left: rem(5);
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: rem(12);
+    background: $lightColor;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
+    border-radius: $borderRadiusInner;
+    transition: $transitionLink;
+    
+    &:hover {
+      path {
+        stroke: $accentColor;
+      }
+
+      circle {
+        fill: $accentColor;
+      }
+    }
+
+    &:active {
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16), inset 0px 3px 12px rgba(0, 0, 0, 0.16);
+    }
+
+    path, circle {
+      transition: $transitionLink;
+    }
+  }
+}

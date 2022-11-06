@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Bakery | О пекарне"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="page__container">
+					<div class="page__breadcrumbs"><a href="#">Bakery</a> / <a href="#">Продукция</a></div>
+					<h1 class="page__title">Наша продукция</h1>
+					<section class="categories">
+						<div class="categories__grid">
+							<a class="categories__category category category--big" href="#">
+								<div class="category__image">
+									<img src="@img/bread-category.jpg" alt="">
+								</div>
+								<h2 class="category__title">Хлеб</h2>
+							</a>
+							<a class="categories__category category" href="#">
+								<div class="category__image">
+									<img src="@img/sweet-bakery-category.jpg" alt="">
+								</div>
+								<h2 class="category__title">Сладкая выпечка</h2>
+							</a>
+							<a class="categories__category category" href="#">
+								<div class="category__image">
+									<img src="@img/coffee-category.jpg" alt="">
+								</div>
+								<h2 class="category__title">Кофе</h2>
+							</a>
+						</div>
+					</section>
+				</div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>
