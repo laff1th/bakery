@@ -24,6 +24,7 @@
   }
 
   &__body {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,10 +37,14 @@
   }
 
   &__search {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__input {
+    position: relative;
     min-width: rem(280);
     display: block;
     padding: rem(16) rem(12) rem(16) rem(44);
@@ -59,10 +64,6 @@
     }
   }
 
-  &__dropdown-inner {
-    position: relative;
-  }
-
   &__search-button {
     position: absolute;
     top: 50%;
@@ -70,90 +71,101 @@
     transform: translateY(-50%);
   }
 
-  &__dropdown-button {
-    padding: rem(12) rem(16);
-  }
-
   &__dropdown {
+    .dropdown__button {
+      padding: rem(12) rem(16);
+    }
   }
-}
-
-.dropdown-button {
-	cursor: pointer;
-	user-select: none;
-	display: flex;
-	transition: all 0.3s ease 0s;
-	border-radius: $borderRadius;
-	position: relative;
-	display: flex;
-	gap: rem(12);
-	font-weight: 600;
-	font-size: $menuFontSize;
-	line-height: $menuLineHeight;
-	background: $lightColor;
-
-	&:hover {
-		padding: rem(12) rem(16);
-		color: $accentColor;
-		box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
-
-		path {
-			fill: $accentColor;
-		}
-	}
-
-  &:active {
-    transition: all 0.1s ease 0s;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16), inset 0px 3px 12px rgba(0, 0, 0, 0.16);
-  }
-
-	&--active {
-		padding: rem(12) rem(16);
-		box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
-
-		svg {
-			transform: rotate(180deg);
-		}
-	}
-
-	svg {
-		transition: $transitionLink;
-	}
 }
 
 .dropdown {
-	position: absolute;
-	width: 100%;
-	top: 56px;
-	left: 0;
-	padding: rem(12) rem(16);
-	background: $lightColor;
-	border-radius: $borderRadius;
-	box-shadow: $shadowSmall;
-	transition: all 0.225s ease 0s;
-	scale: 0;
+  position: relative;
 
-		&--active {
-			scale: 1;
-		}
+  &--active {
+    .dropdown__button {
+      padding: rem(12) rem(16);
+      box-shadow: $shadowButton;
 
-	&__list {
-		display: flex;
-		flex-direction: column;
-		gap: rem(2);
-		font-size: rem(16);
-		line-height: math.div(24, 16);
-	}
+      svg {
+        transform: rotate(180deg);
+      }
+    }
 
-	&__item {
-	}
+    .dropdown__body {
+      scale: 1;
+    }
+  }
 
-	&__link {
+  &__button {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    border-radius: $borderRadius;
+    position: relative;
+    display: flex;
+    gap: rem(12);
+
     font-weight: 600;
-		transition: $transitionLink;
+    font-size: $menuFontSize;
+    line-height: $menuLineHeight;
+    background: $lightColor;
+    transition: all 0.3s ease 0s;
 
-		&:hover{
-			color: $accentColor;
-		}
-	}
+    &:hover {
+      padding: rem(12) rem(16);
+      color: $accentColor;
+      box-shadow: $shadowButton;
+
+      path {
+        fill: $accentColor;
+      }
+    }
+
+    &:active {
+      transition: all 0.3s ease 0s, box-shadow 0.1s;
+      box-shadow: $shadowButtonActive;
+    }
+
+    svg {
+      transition: $transitionLink;
+
+      path {
+        transition: $transitionLink;
+      }
+    }
+  }
+
+  &__body {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    top: 56px;
+    left: 0;
+    padding: rem(12) rem(16);
+    background: $lightColor;
+    border-radius: $borderRadius;
+    box-shadow: $shadowSmall;
+    scale: 0;
+    transition: all 0.225s ease 0s;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2);
+    font-size: rem(16);
+    line-height: math.div(24, 16);
+  }
+
+  &__item {
+  }
+
+  &__link {
+    font-weight: 600;
+    transition: $transitionLink;
+
+    &:hover{
+      color: $accentColor;
+    }
+  }
 }

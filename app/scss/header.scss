@@ -109,20 +109,12 @@
 		&:hover {
 			padding: rem(12) rem(16);
 			color: $accentColor;
-			box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.16), inset 0px 0px 0px rgba(0, 0, 0, 0.16);
-
-			path {
-				fill: $accentColor;
-			}
+			box-shadow: $shadowButton;
 		}
 
 		&:active {
-			transition: all 0.1s ease 0s;
-			box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.16), inset 0px 3px 12px rgba(0, 0, 0, 0.16);
-		}
-
-		path {
-			transition: all 0.3s ease 0s;
+			transition: box-shadow 0.1s ease 0s;
+			box-shadow: $shadowButtonActive;
 		}
 	}
 }
