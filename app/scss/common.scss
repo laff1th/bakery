@@ -1,3 +1,15 @@
+h1 {
+  font-weight: 700;
+  font-size: rem(64);
+  line-height: math.div(78, 64);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: rem(48);
+  line-height: math.div(56, 48);
+}
+
 .page {
   min-height: calc(100vh - rem(80));
 
@@ -31,9 +43,9 @@
   }
 
   &__title {
-    font-weight: 700;
-    font-size: $h1FontSize;
-    line-height: $h1LineHeight;
+  }
+
+  &__see-all {
   }
 
   &__search {
@@ -76,6 +88,42 @@
       padding: rem(12) rem(16);
     }
   }
+}
+
+.see-all {
+  display: flex;
+  gap: rem(12);
+  margin-right: rem(16);
+  font-weight: 600;
+  font-size: $menuFontSize;
+  line-height: $menuLineHeight;
+  border-radius: $borderRadius;
+  transition: $transitionLink, margin 0.3s, padding 0.3s;
+
+  &:hover {
+    margin-right: 0;
+    padding: rem(12) rem(16);
+    color: $accentColor;
+    box-shadow: $shadowButton;
+    path {
+      fill: $accentColor;
+    }
+  }
+
+  &:active {
+    box-shadow: $shadowButtonActive;
+  }
+
+  path {
+    transition: $transitionLink;
+  }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: rem(36);
 }
 
 .dropdown {
